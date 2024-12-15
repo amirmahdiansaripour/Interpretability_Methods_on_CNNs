@@ -5,7 +5,7 @@ These methods help identify the regions (features) of an input image that have t
 
 The famous **VGG16 network** and cats_vs_dogs dataset are used in this project. Since the network was originally trained on the ImageNet dataset, I applied transfer learning and modified the network's top layers to adapt it to the cats_vs_dogs dataset.
 
-1. Grad-CAM ([paper link](https://arxiv.org/pdf/1610.02391)): This method assigns a weight to each feature (filter) of the activation map. The weights are calculated based on the following formula:
+1. **Grad-CAM** **([paper link](https://arxiv.org/pdf/1610.02391))**: This method assigns a weight to each feature (filter) of the activation map. The weights are calculated based on the following formula:
 
  $$\alpha^c = \frac{1}{Z} \Sigma_i \Sigma_j \frac{\partial y^c}{\partial A_{ij}}$$
 
