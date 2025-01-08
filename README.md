@@ -17,3 +17,17 @@ The famous **VGG16 network** and cats_vs_dogs dataset are used in this project. 
 $L^c_{Grad-CAM}$ above is a heatmap showing important regions of the image in classification. We use $ReLU$ because negative values are not defined for pixels.
 
 ![img00](./images/GradCAM_output.png)
+
+2. Saliency Map ([paper link](https://arxiv.org/abs/1312.6034)): This method takes derivation with respect to the input image ($I_0$), not convolutional layer outputs.
+
+ $$M_{ij} = |w_{h(ij)}|$$ 
+ 
+ $$w = \frac{\partial S_c(I)}{\partial I}\rvert_{I_0}$$
+
+Where the output saliency map is $M_{ij}$, pixel index is $h(ij)$, $I$ is the vectorized format of input image $I_0$, and $S_c(I)$ is the score or loss function. Notice that the derivation is taken with respect to $I_0$. 
+
+Here is an output saliency map example of a VGG16 classifier network fine-tuned on the cats_vs_dogs dataset:
+
+![img01](./images/Saliency_output_1.JPG)
+
+![img02](./images/Saliency_output_2.JPG)
