@@ -18,7 +18,7 @@ $L^c_{Grad-CAM}$ above is a heatmap showing important regions of the image in cl
 
 ![img00](./images/GradCAM_output.png)
 
-2. Saliency Map ([paper link](https://arxiv.org/abs/1312.6034)): This method takes derivation with respect to the input image ($I_0$), not convolutional layer outputs.
+2. **Saliency Map ([paper link](https://arxiv.org/abs/1312.6034))**: This method takes derivation with respect to the input image ($I_0$), not convolutional layer outputs.
 
  $$M_{ij} = |w_{h(ij)}|$$ 
  
