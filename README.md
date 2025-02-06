@@ -19,7 +19,7 @@ The final score class, based on which important filters are detected, is:
 
 $$S_c = \Sigma_{x, y} M_c(x, y)$$
 
-1. **Grad-CAM** **([paper link](https://arxiv.org/pdf/1610.02391))**: The weights in this method are calculated based on the gradient of the network's prediction with respect to $A_{ij}$ activation map:
+2. **Grad-CAM** **([paper link](https://arxiv.org/pdf/1610.02391))**: The weights in this method are calculated based on the gradient of the network's prediction with respect to $A_{ij}$ activation map:
 
  $$\alpha^c = \frac{1}{Z} \Sigma_i \Sigma_j \frac{\partial y^c}{\partial A_{ij}}$$
 
