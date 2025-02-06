@@ -3,9 +3,23 @@
 In this project, I implemented and explained three interpretability methods on Convolutional Neural Networks: **Class Activation Map (CAM)**, **Gradient-Weighted CAM (Grad-CAM)**, and **Saliency Map**. 
 These methods help identify the regions (features) of an input image that have the most impact on a CNN's predictions. 
 
-The famous **VGG16 network** and cats_vs_dogs dataset are used in this project. Since the network was originally trained on the ImageNet dataset, I applied transfer learning and modified the network's top layers to adapt it to the cats_vs_dogs dataset.
+The famous **VGG16 network** and **cats_vs_dogs dataset** are used in this project. Since the network was originally trained on the ImageNet dataset, I applied transfer learning and modified the network's top layers to adapt it to the cats_vs_dogs dataset.
 
-1. **Grad-CAM** **([paper link](https://arxiv.org/pdf/1610.02391))**: This method assigns a weight to each feature (filter) of the activation map. The weights are calculated based on the following formula:
+1. **CAM** **([paper_link](https://arxiv.org/abs/1512.04150))**: This method, like other interpretability methods mentioned in this project, assigns a weight to each activation map of the last convolutional layer's output. The weights are the last Global Average Pooling layer's coefficients.
+
+![img11](./images/CAM-architecture.JPG)
+
+We define $M_c(x, y)$ as the activation map for class c: 
+
+$$M_c(x,y) = \Sigma_k w_k^c f_k(x,y)$$
+
+Where $f_k(x,y)$ is the kth filter of the convolutional layer output (located at $(x, y)$ ), and $w_k^c$ is the weight assigned to this filter. 
+
+The final score class, based on which important filters are detected, is:
+
+$$S_c = \Sigma_{x, y} M_c(x, y)$$
+
+1. **Grad-CAM** **([paper link](https://arxiv.org/pdf/1610.02391))**: The weights in this method are calculated based on the gradient of the network's prediction with respect to $A_{ij}$ activation map:
 
  $$\alpha^c = \frac{1}{Z} \Sigma_i \Sigma_j \frac{\partial y^c}{\partial A_{ij}}$$
 
