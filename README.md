@@ -21,7 +21,7 @@ $$S_c = \Sigma_{x, y} M_c(x, y)$$
 
 ![img13](./images/CAM_output.JPG)
 
-As the image indicates, the parts (features) related to animals' noses, eyes, and paws are the most decisive features in classification. 
+As the images indicate, the parts (features) related to animals' noses, eyes, and paws are the most decisive features in the classification. 
 
 2. **Grad-CAM** **([paper link](https://arxiv.org/pdf/1610.02391))**: The weights in this method are calculated based on the network's prediction gradient ($y^c$) with respect to $A_{ij}$ activation map:
 
